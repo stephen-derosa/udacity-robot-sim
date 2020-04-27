@@ -7,6 +7,10 @@
 *.o
 *.obj
 
+devel/
+build/
+*.catkin_workspace
+
 # Precompiled Headers
 *.gch
 *.pch
