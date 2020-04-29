@@ -14,8 +14,8 @@
     <arg name="world_name" value="$(arg world_file)"/>
   </include>
 
-  
-  
+
+
 
   <!-- - - - - - - - Launch the robot  - - - - - - - -->
     <!-- Find my robot Description-->
@@ -45,6 +45,11 @@
 
     <!--launch rviz-->
     <!-- <node name="rviz" pkg="rviz" type="rviz" respawn="false"/> -->
+
+    <!-- Launch Gazebo World -->
+    <include file="$(find ball_chaser)/launch/ball_chaser.launch">
+    </include>
+
 
 </launch>
 
