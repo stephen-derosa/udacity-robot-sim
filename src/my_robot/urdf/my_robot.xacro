@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:include filename="$(find my_bot)/urdf/my_bot.gazebo" />
+  <xacro:include filename="$(find my_robot)/urdf/my_robot.gazebo" />
 
   <link name="robot_footprint"></link>
 
@@ -82,7 +82,7 @@
       />
     </inertial>
 
-    <visual name='left_visual'>
+    <visual name='left_wheel_visual'>
       <origin xyz="0.0 0 0.0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
@@ -92,7 +92,7 @@
       </material>
     </visual>
 
-    <collision name='left_collision'>
+    <collision name='left_wheel_collision'>
         <origin xyz="0.0 0 0.0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
@@ -123,7 +123,7 @@
       />
     </inertial>
 
-    <visual name='right_visual'>
+    <visual name='right_wheel_visual'>
       <origin xyz="0.0 0 0.0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
@@ -133,7 +133,7 @@
       </material>
     </visual>
 
-    <collision name='right_collision'>
+    <collision name='right_wheel_collision'>
         <origin xyz="0.0 0 0.0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
@@ -205,7 +205,7 @@
     <visual name='hokuyo_visual'>
     <origin xyz="0.0 0 0.0" rpy=" 0 0 0"/>
       <geometry>
-        <mesh filename="package://my_bot/meshes/hokuyo.dae"/>
+        <mesh filename="package://my_robot/meshes/hokuyo.dae"/>
       </geometry>
     </visual>
 
@@ -224,18 +224,6 @@
     <parent link="chassis"/>
   </joint>
   <!-- LIDAR joint -->
-
-    <!-- COLORING -->
-    <material name="orange">
-    <color rgba="${255/255} ${108/255} ${10/255} 1.0"/>
-    </material>
-
-    <gazebo reference="left_wheel">
-        <material>Gazebo/Orange</material>
-    </gazebo>
-    <gazebo reference="right_wheel">
-        <material>orange</material>
-    </gazebo>
 
 
 </robot>
